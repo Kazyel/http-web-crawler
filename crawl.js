@@ -74,9 +74,9 @@ const crawlPage = async (baseURL, currentURL, pages) => {
             response.headers.get("Content-Type") != "text/html;charset=UTF-8"
         ) {
             throw new Error(
-                `One of the responses returned with a wrong content-type. \nThe content given was ${response.headers.get(
+                `\nOne of the responses returned with a wrong content-type. \nThe content-type given was ${response.headers.get(
                     "Content-Type"
-                )}.\n`
+                )}.`
             );
         }
         const htmlText = await response.text();
